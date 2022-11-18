@@ -18,7 +18,7 @@ class Fly {
     public function startMachine($app, $machineId)
     {
         $response = Http::withToken($this->token)
-            ->post("https://api.machines.dev/v1/apps/$app/machines/$machineId/start");
+            ->get("https://api.machines.dev/v1/apps/$app/machines/$machineId/start");
 
         if (! $response->successful()) {
             // Log exception so we can provide additional context
